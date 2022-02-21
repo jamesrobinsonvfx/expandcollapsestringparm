@@ -98,5 +98,5 @@ parm.pressButton()
 
 ### Multiparm Default Channel Reference
 ```
-chs("note_expanded#")
+chs("note_collapsed#")
 ```
