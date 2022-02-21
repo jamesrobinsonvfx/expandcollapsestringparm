@@ -95,3 +95,8 @@ parm = kwargs["node"].parm(f"expanded{idx}")
 parm.set(1)
 parm.pressButton()
 ```
+
+### Multiparm Default Channel Reference
+```
+chs("note_expanded#")
+```
