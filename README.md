@@ -103,7 +103,7 @@ chs("note_collapsed#")
 
 ### UPDATE
 Petr Zloty left a very handy comment on Vimeo demonstrating how 
-you can expand/collapse a parm using the Action Button only by 
+you can expand/collapse a parm using only the Action Button only by 
 modifying the `parmTemplate`. This solution is simple and elegant,
 and better overall for single parameters. However, this method will
 not work for individual multiparms since modifying the `parmTemplate` 
