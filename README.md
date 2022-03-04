@@ -100,3 +100,39 @@ parm.pressButton()
 ```
 chs("note_collapsed#")
 ```
+
+### UPDATE
+Petr Zloty left a very handy comment on Vimeo demonstrating how 
+you can expand/collapse a parm using the Action Button only by 
+modifying the `parmTemplate`. This solution is simple and elegant,
+and better overall for single parameters. However, this method will
+not work for individual multiparms since modifying the `parmTemplate` 
+for one modifies them all which is something I wanted to avoid.
+
+```python
+# current node
+node = kwargs['node']
+
+# current parameter
+pt = kwargs["parmtuple"]
+
+# its template
+template = pt.parmTemplate()
+
+# parameter's tags
+tags = template.tags()
+
+# invert collapsed tag
+tags['editor'] = str(1-int(tags['editor']))
+
+# invert icon
+tags['script_action_icon'] = "KEYS_Up" if tags['script_action_icon'] == "KEYS_Down" else "KEYS_Down"
+
+# set updated tags
+template.setTags(tags)
+
+# replace parameter template with updated tags
+group = node.parmTemplateGroup()
+group.replace(pt.name(), template)
+node.setParmTemplateGroup(group)
+```
